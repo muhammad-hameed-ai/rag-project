@@ -69,6 +69,17 @@ kubectl apply -f k8s/
 
 # Port forward to local machine
 kubectl port-forward service/rag-api-service 8080:80
+
+## Kubernetes Deployment (Verified)
+
+This project features a fully tested local Kubernetes deployment using Minikube, demonstrating horizontal scaling, zero-downtime rollouts, and autoscaling.
+
+### 1. Start Cluster & Apply Infrastructure
+```bash
+minikube start --driver=docker --memory=2048 --cpus=2
+kubectl apply -f k8s/configmap.yaml
+kubectl apply -f k8s/service.yaml
+kubectl apply -f k8s/deployment.yaml
 ## Author
 Muhammad Hameed
 github.com/muhammad-hameed-ai
